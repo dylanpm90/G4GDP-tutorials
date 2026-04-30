@@ -10,7 +10,9 @@ config_version=5
 
 [application]
 
-config/name="C1 G4GDP"
+config/name="test_project"
+config/description="Chapter 1 tutorial for G4GDP"
+config/version="1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
