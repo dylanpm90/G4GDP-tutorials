@@ -1,17 +1,16 @@
 extends Area2D
 
+
+#signals
+signal pickup
+signal hurt
+
+
+# declare
 @export var speed = 350
 var velocity = Vector2.ZERO
 var screensize = Vector2(480, 720)
 
-func start():
-	set_process(true)
-	position = screensize / 2
-	$AnimatedSprite2D.animation = "idle"
-
-func die():
-	$AnimatedSprite2D.animation = "hurt"
-	set_process(false)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -39,3 +38,25 @@ func _process(delta: float) -> void:
 	if velocity.x != 0:
 		$AnimatedSprite2D.flip_h = velocity.x < 0
 		
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("coins"):
+		area.pickup()
+		pickup.emit()
+	if area.is_in_group("obstacles"):
+		hurt.emit()
+		die()
+
+
+# player starting position and animation and process
+func start():
+	set_process(true)
+	position = screensize / 2
+	$AnimatedSprite2D.animation = "idle"
+
+
+# player death animation and process
+func die():
+	$AnimatedSprite2D.animation = "hurt"
+	set_process(false)

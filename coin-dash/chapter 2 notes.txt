@@ -1,12 +1,12 @@
 C2 G4GDP notes
 
+Part 1:
+
 Project settings:
 
 resize viewport to 480w and 720h in the display settings
 
 set the stretch mode to canvas_items and aspect to keep and disable resizing the window.
-
-Part 1:
 
 created player scene and used a Area2D node then selected the Group Selected Node(s) option.
 
@@ -33,3 +33,6 @@ created a function for start position and animation.
 
 created a die function for later on in the tutorial.
 
+set up signals for coin pickup and hurt
+
+created function for area entered with coins and obstacles which emits pickup and die signals respectively
