@@ -4,4 +4,14 @@ Project settings:
 
 resize viewport to 480w and 720h in the display settings
 
-set the mode to canvas_items and aspect to keep and disable resizing the window.
+set the stretch mode to canvas_items and aspect to keep and disable resizing the window.
+
+Part 1:
+
+created player scene and used a Area2D node then selected the Group Selected Node(s) option.
+
+created animated sprite child node and made three animations: idle, hurt, and run.
+
+attached corresponding animations from assets to idle, hurt and run.
+
+set default animation and adjusted sprite scale.
