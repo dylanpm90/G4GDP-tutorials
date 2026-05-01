@@ -14,6 +14,7 @@ config/name="Coin Dash"
 config/description="This is the tutorial project for chapter 2 of G4GDP.
 It's called Coin Dash and looks like top down object collection game."
 config/version="1"
+run/main_scene="uid://bgi4dr1njdleh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
