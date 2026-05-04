@@ -13,9 +13,15 @@ coin_scene = ExtResource("2_1bvp3")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 503.0
+offset_bottom = 743.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_0xm2m")
 stretch_mode = 1
+
+[node name="GameTimer" type="Timer" parent="." unique_id=770842271]
 
 [node name="Player" parent="." unique_id=1065242109 instance=ExtResource("2_h2yge")]
