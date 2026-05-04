@@ -18,3 +18,9 @@
     * Choose 'FullRect' in the editor window.
 * Added a Timer node named GameTimer.
 
+
+
+###### **Main Script:**
+
+* added coin\_scene, playtime, level, score, time\_left, screensize and playing variables
+

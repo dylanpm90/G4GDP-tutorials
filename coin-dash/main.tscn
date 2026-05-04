@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://fth60w1mqmsw"]
 
 [ext_resource type="Texture2D" uid="uid://bv4otbyd1t7b4" path="res://assets/grass.png" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://cxj5vk8c70gh5" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dk64n1rkkhnip" path="res://coin.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bgi4dr1njdleh" path="res://player.tscn" id="2_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=1977097722]
+script = ExtResource("1_h2yge")
+coin_scene = ExtResource("2_1bvp3")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1292574744]
 anchors_preset = 15
