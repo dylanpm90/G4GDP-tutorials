@@ -16,8 +16,6 @@ func show_message(text):
 	$Timer.start()
 
 
-
-
 func _on_timer_timeout() -> void:
 	$Message.hide()
 
@@ -28,3 +26,9 @@ func show_game_over():
 	$StartButton.show()
 	$Message.text = "Coin Dash!"
 	$Message.show()
+
+
+func _on_start_button_pressed() -> void:
+	$StartButton.hide()
+	$Message.hide()
+	start_game.emit()
