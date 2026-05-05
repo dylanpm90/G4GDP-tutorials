@@ -14,7 +14,7 @@ func _ready() -> void:
 	screensize = get_viewport().get_visible_rect().size
 	$Player.screensize = screensize
 	$Player.hide()
-	new_game()
+	#new_game()
 
 #adds coins in viewport according to level
 func spawn_coins():

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bafb7td22bulp"]
 
 [ext_resource type="FontFile" uid="uid://cdmxa0dxitq36" path="res://assets/Kenney Bold.ttf" id="1_37p78"]
+[ext_resource type="Script" uid="uid://cjxps4doj4y67" path="res://hud.gd" id="1_64ctp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_64ctp"]
 font = ExtResource("1_37p78")
@@ -11,6 +12,7 @@ outline_color = Color(0.98022395, 1, 0.3841995, 1)
 shadow_color = Color(0, 0, 0, 0.6745098)
 
 [node name="HUD" type="CanvasLayer" unique_id=1645932513]
+script = ExtResource("1_64ctp")
 
 [node name="Message" type="Label" parent="." unique_id=295757551]
 anchors_preset = 14
@@ -47,3 +49,25 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_64ctp")
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1046464208]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartButton" type="Button" parent="." unique_id=170779862]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -31.0
+offset_right = 23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.22000003, 1, 0.41500002, 1)
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 48
+text = "Start"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

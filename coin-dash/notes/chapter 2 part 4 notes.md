@@ -42,9 +42,39 @@
 
 ###### **Updating the UI via GDScript:**
 
+* Add script to HUD
+
+  * update score text whenever a coin is collected
+* Add timer child node to HUD
+
+  * Wait Time: 2 seconds
+  * One Shot: On
+  * Script:
+
+    * function to display message text and start timer.
+    * function to hide message after timeout over signal.
+
+
+
+**Using Buttons**
+
+* Add button child node to HUD and name it StartButton
+
+  * Text: Start
+  * Use same font as Message
+  * Layout: Center Bottom
+* Script on\_start\_button\_pressed signal to hide Start button and Message and emit start\_game signal.
+
 
 
 ###### **Game Over:**
+
+* add function:
+
+  * show game over message
+  * await timeout
+  * show start button
+  * show title text
 
 
 
