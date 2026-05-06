@@ -49,7 +49,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_8np4n")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 12.0
 }]
@@ -64,8 +64,13 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1931914562]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_owu1u")
+autoplay = "default"
 frame = 1
 frame_progress = 0.17959905
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715658560]
 shape = SubResource("CircleShape2D_klycs")
+
+[node name="Timer" type="Timer" parent="." unique_id=1542315399]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
