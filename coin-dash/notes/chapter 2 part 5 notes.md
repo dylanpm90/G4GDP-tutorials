@@ -75,6 +75,58 @@ chapter 2, part 5
 
 **Obstacles**
 
+* Create new Area2D scene called Cactus
+
+  * Children:
+
+    * Sprite2D
+
+      * Add cactus texture from assets
+    * CollisionShape2D
+
+      * add RectangleShape2D for collision shape
+
+        * adjust for the size of the cactus image
+* Add cactus to a new "obstacles" group
+* remove cactus on game over
+* cactus spawn and one is added per level
+* cactuses clear out every new level
+* cactus cannot spawn on coin, powerup or player position
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
