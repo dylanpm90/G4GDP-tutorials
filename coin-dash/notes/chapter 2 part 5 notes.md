@@ -14,3 +14,13 @@ chapter 2, part 5
 
     * set\_deferred()
 
+
+
+**Sound**
+
+* add three AudioStreamPlayer nodes in Main
+
+  * CoinSound, LevelSound, and EndSound 
+  * set respectiive sounds into the stream property of each node
+  * call their play functions in the appropriate functions
+
