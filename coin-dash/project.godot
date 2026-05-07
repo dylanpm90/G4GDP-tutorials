@@ -16,7 +16,7 @@ It's called Coin Dash and looks like top down object collection game."
 config/version="1"
 run/main_scene="uid://fth60w1mqmsw"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bcmdyccyiupo6"
 
 [display]
 
@@ -31,4 +31,5 @@ window/stretch/mode="canvas_items"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
