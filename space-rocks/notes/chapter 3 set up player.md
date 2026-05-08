@@ -48,7 +48,14 @@
 
 **Adding player controls:**
 
+* init engine\_power, spin\_power, thrust and rotation\_dir vars
+* apply inputs for ship movement
 
+  * thrust, rotate
+* Dampening
+
+  * Linear: 1
+  * Angular: 5
 
 
 

@@ -7,6 +7,8 @@
 radius = 23.0
 
 [node name="Player" type="RigidBody2D" unique_id=1121612708]
+linear_damp = 1.0
+angular_damp = 5.0
 script = ExtResource("1_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1036448243]

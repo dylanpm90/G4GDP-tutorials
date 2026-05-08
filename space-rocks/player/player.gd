@@ -7,11 +7,36 @@ enum {
 	DEAD
 }
 
+@export var engine_power = 500
+@export var spin_power = 8000
+var thrust = Vector2.ZERO
+var rotation_dir = 0
+
 var state = INIT
 
 
-func ready():
+func _ready():
 	change_state(ALIVE)
+
+
+@warning_ignore("unused_parameter")
+func _process(delta: float) -> void:
+	get_input()
+
+
+func get_input():
+	thrust = Vector2.ZERO
+	if state in [DEAD, INIT]:
+		return
+	if Input.is_action_pressed("thrust"):
+		thrust = transform.x * engine_power
+	rotation_dir = Input.get_axis("rotate_left","rotate_right")
+
+
+@warning_ignore("unused_parameter")
+func _physics_process(delta: float) -> void:
+	constant_force = thrust
+	constant_torque = rotation_dir * spin_power
 
 
 func change_state(new_state):
