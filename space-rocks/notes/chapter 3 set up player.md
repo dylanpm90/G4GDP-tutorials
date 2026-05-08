@@ -59,6 +59,13 @@
 
 
 
+**Screen wrap:**
+
+* add a variable for screensize which is called in \_ready
+* use \_integrate\_forces() to affect position with the rigidbody
+
+
+
 
 
 
