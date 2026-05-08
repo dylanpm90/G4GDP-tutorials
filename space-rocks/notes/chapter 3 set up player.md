@@ -33,5 +33,56 @@
 
 **State machines:**
 
+* Create a simplistic finite state machine for Player
+
+  * enum
+
+    * INIT, ALIVE, INVULNERABLE, DEAD
+  * create change\_state function
+
+    * enable collision for ALIVE only
+    * disabled for all other states
+  * in ready function, change\_state(ALIVE) for testing
+
+
+
+**Adding player controls:**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

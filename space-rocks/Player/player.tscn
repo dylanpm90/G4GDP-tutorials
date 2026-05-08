@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://bjxqj08mykhut"]
 
-[ext_resource type="Texture2D" uid="uid://b5lcm43vpacpc" path="res://assets/player_ship.png" id="1_l8h54"]
+[ext_resource type="Texture2D" uid="uid://b5lcm43vpacpc" path="res://assets/player_ship.png" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://blndy4cdef8aj" path="res://player/player.gd" id="1_rkbax"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 23.0
 
 [node name="Player" type="RigidBody2D" unique_id=1121612708]
+script = ExtResource("1_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1036448243]
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_l8h54")
+texture = ExtResource("1_oul6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612877379]
 shape = SubResource("CircleShape2D_onrkg")
