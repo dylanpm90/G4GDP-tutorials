@@ -15,9 +15,14 @@ var state = INIT
 var screensize = Vector2.ZERO
 
 
+@export var bullet_scene: PackedScene
+@export var fire_rate = 0.25
+var can_shoot = true
+
 func _ready():
 	change_state(ALIVE)
 	screensize = get_viewport_rect().size
+	$GunCooldown.wait_time = fire_rate
 
 
 @warning_ignore("unused_parameter")
@@ -32,6 +37,10 @@ func get_input():
 	if Input.is_action_pressed("thrust"):
 		thrust = transform.x * engine_power
 	rotation_dir = Input.get_axis("rotate_left","rotate_right")
+	
+	
+	if Input.is_action_pressed("shoot") and can_shoot:
+		shoot()
 
 
 @warning_ignore("unused_parameter")
@@ -58,3 +67,17 @@ func change_state(new_state):
 		DEAD:
 			$CollisionShape2D.set_deferred("disabled", true)
 	state = new_state
+
+
+func shoot():
+	if state == INVULNERABLE:
+		return
+	can_shoot = false
+	$GunCooldown.start()
+	var b = bullet_scene.instantiate()
+	get_tree().root.add_child(b)
+	b.start($Muzzle.global_transform)
+
+
+func _on_gun_cooldown_timeout() -> void:
+	can_shoot = true

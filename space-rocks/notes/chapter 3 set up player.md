@@ -94,7 +94,32 @@
 
 **Firing bullets**
 
+* Add a Marker2D node to player and name it Muzzle
 
+  * position: (50, 0)
+* Add a Timer called GunCooldown
+
+  * One Shot and Autostart: On
+* Add exported bullet\_scene(PackedScene), exported fire\_rate(.25) and can\_shoot(true) variables to player script
+* GunCooldown is the fire\_rate
+* if shoot is pressed and can\_shoot is true, call the shoot function
+* shoot function
+
+  * can't shoot if in invulnerable state
+  * can\_shoot is turned false and the cooldown starts
+  * instantiate the bullet\_scene
+  * bullet is a child of the scenetree rootnode
+  * bullet starts from muzzle
+* connect timeout signal of GunCooldown to be able to shoot again.
+
+
+
+**Testing the player's ship**
+
+* create a new scene with a generic node named Main
+* add a sprite2d background with the space background from the assets as its texture.
+* add an instance of player
+* test player ship
 
 
 

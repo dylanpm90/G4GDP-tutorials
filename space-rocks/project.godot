@@ -13,6 +13,7 @@ config_version=5
 config/name="Space Rocks"
 config/description="space rocks tutorial from G4GDP"
 config/version="1"
+run/main_scene="uid://dacwpsnnrwgv8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://b5lcm43vpacpc"
 
