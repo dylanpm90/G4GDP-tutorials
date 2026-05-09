@@ -66,23 +66,33 @@
 
 
 
+**Shooting**
+
+* Create new Bullet scene
+* Bullet is an Area2D
+
+  * Children:
+
+    * Sprite2D
+
+      * laser texture
+      * scale (.5,.5)
+    * CollisionShape2D
+
+      * capsule shape collision
+      * rotation: 90
+    * VisibleOnscreenNotifier2D
+* Add script
+
+  * var speed init
+  * start function which give velocity
+  * \_process allows velocity
+* on bullet exit screen, delete it.
+* bullet body entered should explode and delete when hitting something in the rocks group
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Firing bullets**
 
 
 
