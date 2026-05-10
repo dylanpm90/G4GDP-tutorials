@@ -12,8 +12,7 @@ enum {
 var thrust = Vector2.ZERO
 var rotation_dir = 0
 var state = INIT
-var screensize = Vector2.ZERO
-
+var screensize = Vector2.ZERO 
 
 @export var bullet_scene: PackedScene
 @export var fire_rate = 0.25
@@ -50,9 +49,10 @@ func _physics_process(delta: float) -> void:
 
 
 func _integrate_forces(physics_state: PhysicsDirectBodyState2D) -> void:
+	var _radius = int($Sprite2D.texture.get_size().x / 2 * $Sprite2D.scale.x)
 	var xform = physics_state.transform
-	xform.origin.x = wrapf(xform.origin.x, 0, screensize.x)
-	xform.origin.y = wrapf(xform.origin.y, 0, screensize.y)
+	xform.origin.x = wrapf(xform.origin.x, 0 - _radius, screensize.x + _radius)
+	xform.origin.y = wrapf(xform.origin.y, 0 - _radius, screensize.y + _radius)
 	physics_state.transform = xform
 
 
