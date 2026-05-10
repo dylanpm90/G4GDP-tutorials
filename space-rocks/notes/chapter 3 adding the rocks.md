@@ -20,3 +20,17 @@
 * make a start function for rock explosion, size and physics
 * for screenwrap for the rocks, use the same technique as you did with the ship, incorporate radius.
 
+
+
+**Instantiating rocks**
+
+* Create a Path2D in the Main scene and name it RockPath
+* Draw along the perimeter of the screen with the path editor tools
+* Add a PathFollow2D child node called RockSpawn to RockPath
+* spawn rocks using the path with script in the Main scene
+* Create a spawn\_rocks function
+
+
+
+**Exploding rocks**
+
