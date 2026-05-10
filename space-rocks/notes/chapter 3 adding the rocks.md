@@ -71,6 +71,16 @@
 
 
 
+**Spawning smaller rocks**
+
+* Connect the exploded signal with code in spawn\_rock
+* create function which makes smaller sized rocks when bigger rocks are shot
+
+  * don't spawn rocks of less than or equal to size 1
+  * offset the smaller rocks directions to be opposite but perpendicular to the player's position
+
+
+
 
 
 
