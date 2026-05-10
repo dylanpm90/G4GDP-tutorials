@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dacwpsnnrwgv8"]
 
 [ext_resource type="Texture2D" uid="uid://c5vrx4b6vljqa" path="res://assets/space_background.png" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://dfyx67mc0w4g" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://dfyx67mc0w4g" path="res://main/main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bjxqj08mykhut" path="res://player/player.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bqsmu0afa6rv" path="res://rock.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bqsmu0afa6rv" path="res://rock/rock.tscn" id="2_lquwl"]
 
 [sub_resource type="Curve2D" id="Curve2D_0xm2m"]
 _data = {

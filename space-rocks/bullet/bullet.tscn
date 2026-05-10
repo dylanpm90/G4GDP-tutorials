@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmqcym7biv1v8"]
 
 [ext_resource type="Texture2D" uid="uid://b2lc4tustabt0" path="res://assets/laser.png" id="1_v7oki"]
-[ext_resource type="Script" uid="uid://depmcpb64m303" path="res://bullet.gd" id="1_v8qja"]
+[ext_resource type="Script" uid="uid://depmcpb64m303" path="res://bullet/bullet.gd" id="1_v8qja"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v8qja"]
 radius = 6.0
