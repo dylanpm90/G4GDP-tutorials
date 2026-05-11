@@ -49,6 +49,27 @@
 
 
 
+**Scripting the UI**
+
+* script HUD
+
+  * signal start\_game
+  * lives, score, message and start button are @onready
+  * show message text with a timer
+  * update score text
+  * update lives
+  * game over message
+  * button functionality
+  * connect pressed signal of StartButton
+
+    * emit start\_game
+  * connect timer timeout
+
+    * hide message
+    * empty quotes message text
+
+
+
 
 
 
