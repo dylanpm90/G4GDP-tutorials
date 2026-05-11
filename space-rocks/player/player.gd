@@ -1,5 +1,8 @@
 extends RigidBody2D
 
+signal lives_changed
+signal dead
+
 enum {
 	INIT,
 	ALIVE,
@@ -17,6 +20,25 @@ var screensize = Vector2.ZERO
 @export var bullet_scene: PackedScene
 @export var fire_rate = 0.25
 var can_shoot = true
+
+
+var reset_pos = false
+var lives = 0: set = set_lives
+func set_lives(value):
+	lives = value
+	lives_changed.emit(lives)
+	if lives <= 0:
+		change_state(DEAD)
+	else:
+		change_state(INVULNERABLE)
+
+
+func reset():
+	reset_pos = true
+	$Sprite2D.show()
+	lives = 3
+	change_state(ALIVE)
+
 
 func _ready():
 	change_state(ALIVE)
@@ -54,6 +76,9 @@ func _integrate_forces(physics_state: PhysicsDirectBodyState2D) -> void:
 	xform.origin.x = wrapf(xform.origin.x, 0 - _radius, screensize.x + _radius)
 	xform.origin.y = wrapf(xform.origin.y, 0 - _radius, screensize.y + _radius)
 	physics_state.transform = xform
+	if reset_pos:
+		physics_state.transform.origin = screensize / 2
+		reset_pos = false
 
 
 func change_state(new_state):

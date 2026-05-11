@@ -70,11 +70,67 @@
 
 
 
+**The Main scene's UI code**
+
+* instance HUD in Main
+* vars:
+
+  * level, score, playing
+* new\_game()
+
+  * remove old rocks from previous round
+  * zero level and score
+  * update score
+  * tell player to "get ready"
+  * reset player
+  * timer
+  * playing = true
+* new\_level()
+
+  * advance one level
+  * show new wave in HUD message
+  * spawn more rocks
+* remove spawn\_rocks method in \_ready()
+* update \_process()
+
+  * don't do anything if player isn't playing
+  * if there aren't any rocks left, call new\_level
+* Connects HUD start\_game to the new\_game function in Main
+
+  * Use the Pick button next to Receiver Method
+* game\_over()
+
+  * no longer playing
+  * call HUD game\_over
 
 
 
+**Player code**
 
+* signal lives\_changed and dead
+* vars
 
+  * reset\_pos
+  * lives
+  * set
+* set\_lives function
+
+  * amount of lives
+  * if lives are zero or less, DEAD
+  * else INVULNERABLE
+* reset()
+
+  * reset position
+  * show Sprite
+  * 3 lives
+  * state is ALIVE
+* update \_integrate\_forces()
+
+  * player set in center of screen
+  * reset\_pos: false
+* Main Player instance
+
+  * lives\_changed connect to script HUD node with update\_lives receiver method
 
 
 
