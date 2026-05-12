@@ -117,3 +117,17 @@ func _on_gun_cooldown_timeout() -> void:
 
 func _on_invulnerability_timer_timeout() -> void:
 	change_state(ALIVE)
+
+
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group("rocks"):
+		body.explode()
+		lives -= 1
+		explode()
+
+
+func explode():
+	$Explosion.show()
+	$Explosion/AnimationPlayer.play("explosion")
+	await $Explosion/AnimationPlayer.animation_finished
+	$Explosion.hide()

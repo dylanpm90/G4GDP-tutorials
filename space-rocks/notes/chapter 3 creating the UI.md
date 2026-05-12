@@ -168,6 +168,38 @@
 
 **Detecting collisions between rigid bodies**
 
+* Enable Player scene contact monitoring
+
+  * max contacts reported: 1
+* connect body\_entered signal
+
+  * func \_on\_body\_entered(body)
+
+    * if hit by a rock, explode
+    * reduce lives by 1
+    * call explode function
+  * made another explode function for Player
+* Main
+
+  * connect Player instance dead signal to game\_over
+  * Test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

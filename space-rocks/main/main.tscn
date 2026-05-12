@@ -30,5 +30,6 @@ curve = SubResource("Curve2D_0xm2m")
 
 [node name="HUD" parent="." unique_id=933481496 instance=ExtResource("5_3wy1v")]
 
+[connection signal="dead" from="Player" to="." method="game_over"]
 [connection signal="lives_changed" from="Player" to="HUD" method="update_lives"]
 [connection signal="start_game" from="HUD" to="." method="start_game"]
