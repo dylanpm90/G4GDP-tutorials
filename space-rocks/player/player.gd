@@ -24,6 +24,8 @@ var can_shoot = true
 
 var reset_pos = false
 var lives = 0: set = set_lives
+
+
 func set_lives(value):
 	lives = value
 	lives_changed.emit(lives)
