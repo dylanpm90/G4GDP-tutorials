@@ -134,25 +134,39 @@
 
 
 
+**Ending the Game**
+
+* Instance Explosion on Player
+
+  * uncheck Visibility
+  * Add Timer called InvulnerabilityTimer
+
+    * Wait time: 2
+    * One shot: On
+* Update State Machine (change\_state)
+
+  * Init
+
+    * sprite alpha = .5
+  * ALIVE
+
+    * alpha = 1.0
+  * INVULNERABLE
+
+    * alpha = 0.5
+    * start Invulnerability timer
+  * DEAD
+
+    * hide sprite
+    * linear velocity stops
+    * emit dead
+* Connect InvulnerabilityTimer
+
+  * func to change\_state to alive on timeout
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Detecting collisions between rigid bodies**
 
 
 
