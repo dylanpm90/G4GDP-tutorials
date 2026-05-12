@@ -186,6 +186,20 @@
 
 
 
+**Pausing the game**
+
+* map P to pause in Input settings
+* pause with \_input(event)
+
+  * ignore if not playing
+  * flip scene tree pause state
+  * get message from HUD
+  * show Paused
+  * or hide message
+* set Main Process/Mode to Always
+
+
+
 
 
 
