@@ -1,6 +1,6 @@
 extends Area2D
 
-
+@export var damage = 15
 @export var speed = 1000
 func start(_pos, _dir):
 	position = _pos
@@ -11,8 +11,9 @@ func _process(delta: float) -> void:
 	position += transform.x * speed * delta
 
 
-@warning_ignore("unused_parameter")
 func _on_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		body.shield -= damage
 	queue_free()
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:

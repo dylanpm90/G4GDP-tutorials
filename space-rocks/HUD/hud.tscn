@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://c6271odv5b2q0" path="res://HUD/hud.gd" id="1_1rsjr"]
 [ext_resource type="FontFile" uid="uid://djm33tl5hp5wh" path="res://assets/kenvector_future_thin.ttf" id="1_mi5n8"]
 [ext_resource type="Texture2D" uid="uid://b5g04wcfbsvhx" path="res://assets/player_small.png" id="2_yu8mg"]
+[ext_resource type="Texture2D" uid="uid://bm27hi0nerrgp" path="res://assets/shield_gold.png" id="3_6dvid"]
 [ext_resource type="Texture2D" uid="uid://djcgvq65u13wj" path="res://assets/play_button.png" id="3_jvmdh"]
 [ext_resource type="Texture2D" uid="uid://c4qlvcrqesv4b" path="res://assets/play_button_h.png" id="4_1rsjr"]
+[ext_resource type="Texture2D" uid="uid://c38q424adm2qi" path="res://assets/bar_glass_200.png" id="4_y0nqa"]
+[ext_resource type="Texture2D" uid="uid://uxvreef2g4rw" path="res://assets/bar_green_200.png" id="5_2q3se"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jvmdh"]
 font = ExtResource("1_mi5n8")
@@ -38,6 +41,20 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 label_settings = SubResource("LabelSettings_jvmdh")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=252516803]
+layout_mode = 2
+texture = ExtResource("3_6dvid")
+stretch_mode = 3
+
+[node name="ShieldBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer" unique_id=1668730398]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+texture_over = ExtResource("4_y0nqa")
+texture_progress = ExtResource("5_2q3se")
 
 [node name="LivesCounter" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=829945667]
 layout_mode = 2
