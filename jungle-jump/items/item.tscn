@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cyraoi5ke84t8"]
+
+[ext_resource type="Texture2D" uid="uid://b723v8ecspday" path="res://assets/sprites/cherry.png" id="1_pxpuq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_buahv"]
+radius = 12.0
+
+[sub_resource type="Animation" id="Animation_k7rtb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_cd4ji"]
+resource_name = "swing"
+length = 1.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 4, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_88lpn"]
+_data = {
+&"RESET": SubResource("Animation_k7rtb"),
+&"swing": SubResource("Animation_cd4ji")
+}
+
+[node name="Item" type="Area2D" unique_id=1194323986]
+collision_layer = 8
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=914700729]
+texture = ExtResource("1_pxpuq")
+hframes = 5
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=871684500]
+shape = SubResource("CircleShape2D_buahv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=993539580]
+libraries/ = SubResource("AnimationLibrary_88lpn")
+autoplay = &"swing"
