@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cyraoi5ke84t8"]
 
+[ext_resource type="Script" uid="uid://lta5k4bwber2" path="res://items/item.gd" id="1_buahv"]
 [ext_resource type="Texture2D" uid="uid://b723v8ecspday" path="res://assets/sprites/cherry.png" id="1_pxpuq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_buahv"]
@@ -47,6 +48,7 @@ _data = {
 [node name="Item" type="Area2D" unique_id=1194323986]
 collision_layer = 8
 collision_mask = 2
+script = ExtResource("1_buahv")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=914700729]
@@ -60,3 +62,5 @@ shape = SubResource("CircleShape2D_buahv")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=993539580]
 libraries/ = SubResource("AnimationLibrary_88lpn")
 autoplay = &"swing"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

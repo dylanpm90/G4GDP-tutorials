@@ -29,3 +29,60 @@
         * autoplay
         * animate
 
+
+
+**Collectible script**
+
+* script
+
+  * signal picked\_up
+  * textures dictionary
+
+    * cherries
+    * gems
+  * init
+
+    * args
+
+      * type, position
+    * sprite uses texture loaded from dictionary
+    * assign position
+  * connect item body entered
+
+    * emit picked\_up
+    * queue free
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
