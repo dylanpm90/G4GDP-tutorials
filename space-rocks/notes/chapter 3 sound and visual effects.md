@@ -30,3 +30,57 @@
     * stop in game\_over
 * Add audiostreamplayers to enemy for explosion and shooting
 
+
+
+**Particles, player thrust**
+
+* Add CPUParticles2D node 
+
+  * Name: Exhaust
+  * Amount: 25
+  * Drawing/Local Coords: On
+  * Transform/Position: (-28,0)
+  * Transform/Rotation: 180
+  * Visibility/Show Behind Parent: On
+  * Emission Shape: Rectangle
+
+    * Rect Extents: 1, 5
+  * Direction/Spread: 0
+  * Gravity: 0, 0
+  * Initial Velocity/Velocity Max: 400
+  * Scale/Scale Amount Max: 8
+  * Set new Scale Amount Curve with two points set in a downward curve
+  * Color Ramp Gradient
+
+    * make it look like a flame
+  * Lifetime: 0.1
+* update player script
+
+  * Exhaust only emits when thrust is true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
