@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqmcg83s02mvu"]
 
 [ext_resource type="Texture2D" uid="uid://cevb6x0snn2ca" path="res://assets/player_sheet.png" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://c1lw6pb0r7o3h" path="res://player/player.gd" id="1_rkbax"]
 
 [sub_resource type="Animation" id="Animation_oul6g"]
 length = 0.001
@@ -121,6 +122,7 @@ size = Vector2(10, 20)
 [node name="Player" type="CharacterBody2D" unique_id=1517647314]
 collision_layer = 2
 collision_mask = 13
+script = ExtResource("1_rkbax")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1000219093]
