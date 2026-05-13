@@ -55,3 +55,27 @@
   * show collision shapes
   * test character movement
 
+
+
+**Player health**
+
+* signals for life changed and died
+* life and a set function for life
+
+  * if life is less than or equal to 0, change state to dead
+* Add life to reset function
+* hurt()
+
+  * change state to hurt when function is called
+* HURT state:
+
+  * play hurt anim
+  * send the player away from the object which hurt them
+  * lose 1 life
+  * timer to switch back to idle
+* DEAD state:
+
+  * emit died
+  * hide
+* disable input when hurt
+

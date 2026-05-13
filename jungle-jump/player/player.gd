@@ -1,5 +1,16 @@
 extends CharacterBody2D
 
+signal life_changed
+signal died
+
+var life = 3: set = set_life
+func set_life(value):
+	life = value
+	life_changed.emit(life)
+	if life <= 0:
+		change_state(DEAD)
+
+
 @export var gravity = 750
 @export var run_speed = 150
 @export var jump_speed = -300
@@ -22,13 +33,22 @@ func change_state(new_state):
 			$AnimationPlayer.play("run")
 		HURT:
 			$AnimationPlayer.play("hurt")
+			velocity.y = -200
+			velocity.x = -100 * sign(velocity.x)
+			life -= 1
+			await get_tree().create_timer(0.5).timeout
+			change_state(IDLE)
 		JUMP:
 			$AnimationPlayer.play("jump_up")
 		DEAD:
+			died.emit()
 			hide()
 
 
 func get_input():
+	if state == HURT:
+		return
+	
 	var right = Input.is_action_pressed("right")
 	var left = Input.is_action_pressed("left")
 	var jump = Input.is_action_just_pressed("jump")
@@ -72,5 +92,11 @@ func _physics_process(delta: float) -> void:
 
 func reset(_position):
 	position = _position
+	life = 3
 	show()
 	change_state(IDLE)
+
+
+func hurt():
+	if state != HURT:
+		change_state(HURT)
