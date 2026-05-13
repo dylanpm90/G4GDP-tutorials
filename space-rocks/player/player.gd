@@ -76,6 +76,10 @@ func get_input():
 		return
 	if Input.is_action_pressed("thrust"):
 		thrust = transform.x * engine_power
+		if not $EngineSound.playing:
+			$EngineSound.play()
+	else: 
+		$EngineSound.stop()
 	rotation_dir = Input.get_axis("rotate_left","rotate_right")
 	
 	
@@ -115,12 +119,14 @@ func change_state(new_state):
 		DEAD:
 			$CollisionShape2D.set_deferred("disabled", true)
 			$Sprite2D.hide()
+			$EngineSound.stop()
 			linear_velocity = Vector2.ZERO
 			dead.emit()
 	state = new_state
 
 
 func shoot():
+	$LaserSound.play()
 	if state == INVULNERABLE:
 		return
 	can_shoot = false
