@@ -60,6 +60,24 @@
 
 
 
+**Enemy trail**
+
+* Add CPUParticles to the Enemy
+
+  * Amount: 20
+  * Visibility/Show Behind Parent: On
+  * Emission Shape/ Sphere Radius: 25
+  * Gravity: 0,0
+  * use corona asset for Drawing/Texture
+  * Scale/ Scale amount max: 0.1
+  * Material > New CanvasItemMaterial 
+
+    * Blend Mode: Add
+  * Scale/ Scale amount Curve: 8
+  * Lifetime:2.5
+
+
+
 
 
 
