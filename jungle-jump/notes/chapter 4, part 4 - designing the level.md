@@ -39,5 +39,9 @@
 
 **designing the first level**
 
-* 
+* create new inherited scene from level\_base
+
+  * Level101
+
+    * design a level and play around
 
