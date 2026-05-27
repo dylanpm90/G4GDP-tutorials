@@ -17,3 +17,27 @@
       * Add Element in PhysicsLayers in environment layer
       * Paint - choose physics Layer 0
 
+
+
+**using the provided tilesets**
+
+* add the three premade sets
+
+  * tile map nodes
+
+    * World
+    * Items
+    * Danger
+* Instance player
+* Add Marker2D called SpawnPoint
+* Attach script to Level node
+
+  * hide items
+  * set player position to spawn point
+
+
+
+**designing the first level**
+
+* 
+
