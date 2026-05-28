@@ -82,6 +82,12 @@ func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	get_input()
 	move_and_slide()
+	if state == HURT:
+		return
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().is_in_group("danger"):
+			hurt()
 	# in the tutorial the following code is place in this function
 	# rather than the get_input() funciton.
 	if state == JUMP and is_on_floor():
