@@ -44,4 +44,29 @@
   * Level101
 
     * design a level and play around
+    * place some items around the map
+
+
+
+**update level\_base script**
+
+* hide items
+* reset player spawn
+* set camera limits
+
+  * get map size
+* player can collect items
+
+  * load item scene
+  * set score to zero
+  * spawn items
+  * picking up an item adds 1 to the score
+
+
+
+&#x20;**dangerous objects**
+
+* add danger objects around the map
+
+  * add danger tilemap to a new danger group
 
