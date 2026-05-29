@@ -5,6 +5,8 @@ signal score_changed
 
 var item_scene = load("res://items/item.tscn")
 var score = 0: set = set_score
+
+
 func set_score(value):
 	score = value
 	score_changed.emit(value)
@@ -32,11 +34,8 @@ func _on_item_picked_up():
 	score += 1
 
 
-
-
-
 func set_camera_limits():
 	var map_size = $World.get_used_rect()
 	var cell_size = $World.tile_set.tile_size
-	$Player/Camera2D.limit_left = (map_size.position.x-5) * cell_size.x
-	$Player/Camera2D.limit_right = (map_size.end.x + 5) * cell_size.x
+	$Player/Camera2D.limit_left = (map_size.position.x) * cell_size.x
+	$Player/Camera2D.limit_right = (map_size.end.x) * cell_size.x

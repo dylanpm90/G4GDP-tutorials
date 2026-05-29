@@ -13,9 +13,15 @@ config_version=5
 config/name="Jungle Jump"
 config/description="Platformer tutorial from G4GDP"
 config/version="1"
-run/main_scene="res://main/main.tscn"
+run/main_scene="uid://jcvtlh5rk08p"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/use_filter=false
 config/icon="uid://em56brlc64jn"
+
+[autoload]
+
+GameState="*uid://bef3u2d54yly3"
 
 [display]
 
