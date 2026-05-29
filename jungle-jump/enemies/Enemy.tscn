@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://butecpf0i86gk" path="res://enemies/enemy.gd" id="1_43lb5"]
 [ext_resource type="Texture2D" uid="uid://qto0f40uptcu" path="res://assets/sprites/opossum.png" id="1_t3dtw"]
 [ext_resource type="Texture2D" uid="uid://cqvqk4fyyktpk" path="res://assets/sprites/enemy-death.png" id="2_8tr1a"]
+[ext_resource type="AudioStream" uid="uid://bov8yoxiu8an" path="res://assets/audio/enemy_hit.ogg" id="4_3o3gx"]
+[ext_resource type="AudioStream" uid="uid://bvffeatutr7w" path="res://assets/audio/jump4.ogg" id="5_jennj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3dtw"]
 size = Vector2(24, 14)
@@ -105,5 +107,14 @@ shape = SubResource("RectangleShape2D_t3dtw")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1754088206]
 libraries/ = SubResource("AnimationLibrary_ccvpq")
 autoplay = &"walk"
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=1083212242]
+stream = ExtResource("4_3o3gx")
+volume_db = -20.0
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=519962020]
+stream = ExtResource("5_jennj")
+volume_db = -25.0
+pitch_scale = 10.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

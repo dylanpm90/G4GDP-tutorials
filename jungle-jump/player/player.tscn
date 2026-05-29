@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cevb6x0snn2ca" path="res://assets/player_sheet.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://c1lw6pb0r7o3h" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="AudioStream" uid="uid://dj1vvhslav6y6" path="res://assets/audio/hurt1.ogg" id="3_g1dw6"]
+[ext_resource type="AudioStream" uid="uid://bvffeatutr7w" path="res://assets/audio/jump4.ogg" id="3_yw30f"]
 
 [sub_resource type="Animation" id="Animation_oul6g"]
 length = 0.001
@@ -145,3 +147,12 @@ limit_top = 0
 position_smoothing_speed = 10.0
 drag_vertical_enabled = true
 drag_top_margin = 0.4
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1525173341]
+stream = ExtResource("3_yw30f")
+volume_db = -15.0
+pitch_scale = 5.0
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=1322568667]
+stream = ExtResource("3_g1dw6")
+volume_db = -15.0

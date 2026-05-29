@@ -22,3 +22,7 @@ position = Vector2(405, 322)
 
 [node name="Enemy2" parent="." index="8" unique_id=837169479 instance=ExtResource("2_81a5f")]
 position = Vector2(958, 306)
+
+[node name="ColorRect" parent="." index="12" unique_id=1760713141]
+offset_left = -232.99997
+offset_right = -178.6802

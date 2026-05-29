@@ -3,7 +3,107 @@
 [ext_resource type="Texture2D" uid="uid://50io455eskre" path="res://assets/environment/back.png" id="1_5w2xo"]
 [ext_resource type="Script" uid="uid://bpquamtawg8fc" path="res://ui/title.gd" id="1_8lx1x"]
 [ext_resource type="Texture2D" uid="uid://b33vv5523s2t2" path="res://assets/environment/middle.png" id="2_8lx1x"]
+[ext_resource type="AudioStream" uid="uid://bvffeatutr7w" path="res://assets/audio/jump4.ogg" id="2_wsk5t"]
 [ext_resource type="FontFile" uid="uid://dsdiiq7bnwq2k" path="res://assets/Kenney Thick.ttf" id="3_k1m56"]
+[ext_resource type="AudioStream" uid="uid://c6wuu64vo4nuj" path="res://assets/audio/Intro Theme.ogg" id="5_k1m56"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wdato"]
+font = ExtResource("3_k1m56")
+font_size = 72
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kevmy"]
+font = ExtResource("3_k1m56")
+font_size = 48
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_wsk5t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../middle:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../back1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../back2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w65fh"]
+resource_name = "fade_out"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../middle:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 0.07966014),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../back1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 0.27739248),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../back2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 0.277),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wtvfu"]
+_data = {
+&"RESET": SubResource("Animation_wsk5t"),
+&"fade_out": SubResource("Animation_w65fh")
+}
 
 [sub_resource type="Animation" id="Animation_k5sll"]
 length = 0.001
@@ -106,18 +206,6 @@ _data = {
 &"scroll": SubResource("Animation_525av")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_wdato"]
-font = ExtResource("3_k1m56")
-font_size = 72
-outline_size = 16
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_kevmy"]
-font = ExtResource("3_k1m56")
-font_size = 48
-outline_size = 16
-outline_color = Color(0, 0, 0, 1)
-
 [sub_resource type="Animation" id="Animation_7gau0"]
 length = 0.001
 tracks/0/type = "value"
@@ -179,6 +267,59 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Title:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Message:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wtvfu"]
+resource_name = "fade_out"
+length = 1.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Message:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_7tqo7"]
@@ -249,6 +390,7 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l43rt"]
 _data = {
 &"RESET": SubResource("Animation_7gau0"),
+&"fade_out": SubResource("Animation_wtvfu"),
 &"intro": SubResource("Animation_7tqo7")
 }
 
@@ -260,6 +402,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8lx1x")
+
+[node name="Timer" type="Timer" parent="." unique_id=1441674271]
+wait_time = 2.0
+one_shot = true
 
 [node name="back1" type="TextureRect" parent="." unique_id=1835337212]
 modulate = Color(0, 0, 0, 1)
@@ -285,11 +431,6 @@ grow_vertical = 2
 texture = ExtResource("1_5w2xo")
 stretch_mode = 6
 
-[node name="back_scroll" type="AnimationPlayer" parent="." unique_id=297367040]
-root_node = NodePath("../back2")
-libraries/ = SubResource("AnimationLibrary_kevmy")
-autoplay = &"back_scroll"
-
 [node name="middle" type="TextureRect" parent="." unique_id=200179015]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
@@ -298,10 +439,6 @@ offset_right = 2304.0
 offset_bottom = 709.0
 texture = ExtResource("2_8lx1x")
 stretch_mode = 1
-
-[node name="mid_scroll" type="AnimationPlayer" parent="." unique_id=1428295169]
-libraries/ = SubResource("AnimationLibrary_k5sll")
-autoplay = &"scroll"
 
 [node name="Title" type="Label" parent="." unique_id=513558694]
 layout_mode = 1
@@ -335,6 +472,28 @@ grow_vertical = 0
 text = "Press Space to Play"
 label_settings = SubResource("LabelSettings_kevmy")
 
+[node name="enter_game" type="AnimationPlayer" parent="." unique_id=942323537]
+root_node = NodePath("../text_and_visibility")
+libraries/ = SubResource("AnimationLibrary_wtvfu")
+
+[node name="back_scroll" type="AnimationPlayer" parent="." unique_id=297367040]
+root_node = NodePath("../back2")
+libraries/ = SubResource("AnimationLibrary_kevmy")
+autoplay = &"back_scroll"
+
+[node name="mid_scroll" type="AnimationPlayer" parent="." unique_id=1428295169]
+libraries/ = SubResource("AnimationLibrary_k5sll")
+autoplay = &"scroll"
+
 [node name="text_and_visibility" type="AnimationPlayer" parent="." unique_id=606031483]
 libraries/ = SubResource("AnimationLibrary_l43rt")
 autoplay = &"intro"
+
+[node name="ConfirmSound" type="AudioStreamPlayer2D" parent="." unique_id=99260765]
+stream = ExtResource("2_wsk5t")
+volume_db = -10.0
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=554452470]
+stream = ExtResource("5_k1m56")
+volume_db = -10.0
+autoplay = true

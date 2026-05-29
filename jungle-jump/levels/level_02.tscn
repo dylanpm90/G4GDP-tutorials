@@ -34,3 +34,7 @@ position = Vector2(531, 290)
 
 [node name="SpawnPoint" parent="." index="9" unique_id=1830552437]
 position = Vector2(54, 448)
+
+[node name="ColorRect" parent="." index="14" unique_id=1760713141]
+offset_left = -707.99994
+offset_right = -627.6166

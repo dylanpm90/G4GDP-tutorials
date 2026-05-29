@@ -15,6 +15,7 @@ func _physics_process(delta):
 		if collision.get_normal().x != 0:
 			facing = sign(collision.get_normal().x)
 			velocity.y = -100
+			$JumpSound.play()
 	if position.y > 10000:
 		queue_free()
 
@@ -22,6 +23,7 @@ func _physics_process(delta):
 func take_damage():
 	$AnimationPlayer.play("death")
 	$CollisionShape2D.set_deferred("disabled", true)
+	$DeathSound.play()
 	set_physics_process(false)
 
 

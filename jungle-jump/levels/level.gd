@@ -16,6 +16,7 @@ func set_score(value):
 func _ready() -> void:
 	$Items.hide()
 	$Player.reset($SpawnPoint.position)
+	$fade.play("fade_in")
 	set_camera_limits()
 	spawn_items()
 
@@ -38,6 +39,7 @@ func spawn_items():
 
 
 func _on_item_picked_up():
+	$PickUpSound.play()
 	score += 1
 
 
@@ -49,9 +51,11 @@ func set_camera_limits():
 
 
 func _on_player_died() -> void:
+	$fade.play("fade_out")
 	GameState.restart()
 
 
 @warning_ignore("unused_parameter")
 func _on_door_entered(body):
+	$fade.play("fade_out")
 	GameState.next_level()

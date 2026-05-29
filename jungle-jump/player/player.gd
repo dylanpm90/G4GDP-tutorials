@@ -68,6 +68,7 @@ func get_input():
 	if jump and is_on_floor():
 		change_state(JUMP)
 		velocity.y = jump_speed
+		$JumpSound.play()
 	# IDLE transitions to RUN when moving
 	if state == IDLE and velocity.x != 0:
 		change_state(RUN)
@@ -115,4 +116,5 @@ func reset(_position):
 
 func hurt():
 	if state != HURT:
+		$HurtSound.play()
 		change_state(HURT)

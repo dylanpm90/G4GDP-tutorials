@@ -8,9 +8,95 @@
 [ext_resource type="TileSet" uid="uid://dhxw3f8l2saqn" path="res://assets/tilesets/tiles_world.tres" id="4_cnvg6"]
 [ext_resource type="PackedScene" uid="uid://bqmcg83s02mvu" path="res://player/player.tscn" id="5_p3adb"]
 [ext_resource type="PackedScene" uid="uid://cjm6c45pjsa3b" path="res://ui/hud.tscn" id="8_cnvg6"]
+[ext_resource type="AudioStream" uid="uid://c8ymsckh2dhce" path="res://assets/audio/Grasslands Theme.ogg" id="9_p3adb"]
+[ext_resource type="AudioStream" uid="uid://bq1o6l5l8j6p3" path="res://assets/audio/pickup2.ogg" id="10_5f4n4"]
+
+[sub_resource type="Animation" id="Animation_5f4n4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_twsyw"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6hf62"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kuw7y"]
+_data = {
+&"RESET": SubResource("Animation_5f4n4"),
+&"fade_in": SubResource("Animation_twsyw"),
+&"fade_out": SubResource("Animation_6hf62")
+}
 
 [node name="LevelBase" type="Node" unique_id=800314931]
 script = ExtResource("1_ep22m")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1760713141]
+offset_left = -72.99999
+offset_top = -194.0
+offset_right = -32.999992
+offset_bottom = -154.0
+scale = Vector2(32.382317, 28.485178)
+color = Color(0, 0, 0, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1339059442]
 
@@ -53,6 +139,19 @@ format = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=672400650]
 
 [node name="HUD" parent="CanvasLayer" unique_id=82085438 instance=ExtResource("8_cnvg6")]
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1993870324]
+stream = ExtResource("9_p3adb")
+volume_db = -10.0
+autoplay = true
+
+[node name="PickUpSound" type="AudioStreamPlayer2D" parent="." unique_id=1654662840]
+stream = ExtResource("10_5f4n4")
+volume_db = -15.0
+
+[node name="fade" type="AnimationPlayer" parent="." unique_id=962844849]
+root_node = NodePath("../ColorRect")
+libraries/ = SubResource("AnimationLibrary_kuw7y")
 
 [connection signal="score_changed" from="." to="CanvasLayer/HUD" method="update_score"]
 [connection signal="died" from="Player" to="." method="_on_player_died"]
