@@ -3,21 +3,23 @@ extends CharacterBody2D
 signal life_changed
 signal died
 
-var life = 3: set = set_life
-func set_life(value):
-	life = value
-	life_changed.emit(life)
-	if life <= 0:
-		change_state(DEAD)
-
 
 @export var gravity = 750
 @export var run_speed = 150
 @export var jump_speed = -300
+var state = IDLE
+var life = 3: 
+	set = set_life
+
+
+func set_life(value):
+	life = value
+	life_changed.emit(life)
+
+
+
 
 enum { IDLE, RUN, JUMP, HURT, DEAD }
-
-var state = IDLE
 
 
 func _ready() -> void:
@@ -38,6 +40,8 @@ func change_state(new_state):
 			life -= 1
 			await get_tree().create_timer(0.5).timeout
 			change_state(IDLE)
+			if life <= 0:
+				change_state(DEAD)
 		JUMP:
 			$AnimationPlayer.play("jump_up")
 		DEAD:

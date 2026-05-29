@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dagq3ochm2p2d"]
 
 [ext_resource type="Texture2D" uid="uid://50io455eskre" path="res://assets/environment/back.png" id="1_5w2xo"]
+[ext_resource type="Script" uid="uid://bpquamtawg8fc" path="res://ui/title.gd" id="1_8lx1x"]
 [ext_resource type="Texture2D" uid="uid://b33vv5523s2t2" path="res://assets/environment/middle.png" id="2_8lx1x"]
 [ext_resource type="FontFile" uid="uid://dsdiiq7bnwq2k" path="res://assets/Kenney Thick.ttf" id="3_k1m56"]
 
@@ -258,6 +259,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8lx1x")
 
 [node name="back1" type="TextureRect" parent="." unique_id=1835337212]
 modulate = Color(0, 0, 0, 1)

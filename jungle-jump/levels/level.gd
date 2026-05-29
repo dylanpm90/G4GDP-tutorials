@@ -39,3 +39,7 @@ func set_camera_limits():
 	var cell_size = $World.tile_set.tile_size
 	$Player/Camera2D.limit_left = (map_size.position.x) * cell_size.x
 	$Player/Camera2D.limit_right = (map_size.end.x) * cell_size.x
+
+
+func _on_player_died() -> void:
+	GameState.restart()
