@@ -7,6 +7,13 @@ var item_scene = load("res://items/item.tscn")
 var score = 0: set = set_score
 
 
+func _ready() -> void:
+	$Items.hide()
+	$Player.reset($SpawnPoint.position)
+	set_camera_limits()
+	spawn_items()
+
+
 func spawn_items():
 	var item_cells = $Items.get_used_cells(0)
 	for cell in item_cells:
@@ -27,15 +34,8 @@ func set_score(value):
 	score_changed.emit()
 
 
-func _ready() -> void:
-	$Items.hide()
-	$Player.reset($SpawnPoint.position)
-	set_camera_limits()
-	spawn_items()
-
-
 func set_camera_limits():
 	var map_size = $World.get_used_rect()
 	var cell_size = $World.tile_set.tile_size
-	$Player/Camera2D.limit_left = (map_size.position.x - 5) * cell_size.x
+	$Player/Camera2D.limit_left = (map_size.position.x-5) * cell_size.x
 	$Player/Camera2D.limit_right = (map_size.end.x + 5) * cell_size.x

@@ -17,3 +17,25 @@
 
 * new animation in enemy Animation player
 
+  * death
+
+    * length = 0.3
+    * snap to 0.05
+    * loop off
+    * enemy death texture
+
+      * keyframe
+* new function in enemy.gd
+
+  * plays death animation
+  * disables collision shape
+  * turns off physics process
+* connect animation end for death animation then queue free
+* update player script
+
+  * if collision group is enemies
+
+    * if enemy is below player, enemy takes damage
+    * player gets upward velocity
+    * otherwise, player is hurt
+
