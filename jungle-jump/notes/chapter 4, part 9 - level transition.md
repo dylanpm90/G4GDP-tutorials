@@ -31,4 +31,7 @@
     * update spawn items
 
       * if it's a door type item instance it and connect it's body\_entered signal to go to the next level.
+* screen settings
+
+  * set aspect to keep in project settings
 
