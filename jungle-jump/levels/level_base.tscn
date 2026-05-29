@@ -28,7 +28,7 @@ motion_mirroring = Vector2(880, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1859198407]
 texture_repeat = 3
-position = Vector2(438, 328)
+position = Vector2(438, 372)
 texture = ExtResource("3_cnvg6")
 region_enabled = true
 region_rect = Rect2(0, 0, 880, 368)
@@ -41,7 +41,7 @@ format = 2
 tile_set = ExtResource("2_ts4ud")
 format = 2
 
-[node name="Danger" type="TileMap" parent="." unique_id=1234633313]
+[node name="Danger" type="TileMap" parent="." unique_id=1234633313 groups=["danger"]]
 tile_set = ExtResource("3_jd1fy")
 format = 2
 
