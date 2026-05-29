@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cjm6c45pjsa3b"]
 
 [ext_resource type="FontFile" uid="uid://dsdiiq7bnwq2k" path="res://assets/Kenney Thick.ttf" id="1_276te"]
+[ext_resource type="Script" uid="uid://cu6b0rlqesf4f" path="res://ui/hud.gd" id="1_546lt"]
 [ext_resource type="Texture2D" uid="uid://em56brlc64jn" path="res://assets/heart.png" id="2_546lt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ihmi"]
@@ -18,6 +19,7 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 20
+script = ExtResource("1_546lt")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1785619707]
 layout_mode = 2
@@ -25,7 +27,7 @@ layout_mode = 2
 [node name="Score" type="Label" parent="HBoxContainer" unique_id=10366919]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "100"
+text = "0"
 label_settings = SubResource("LabelSettings_7ihmi")
 
 [node name="LifeCounter" type="HBoxContainer" parent="HBoxContainer" unique_id=26014378]

@@ -7,6 +7,7 @@
 [ext_resource type="TileSet" uid="uid://blhd0ogpuydej" path="res://assets/tilesets/tiles_spikes.tres" id="3_jd1fy"]
 [ext_resource type="TileSet" uid="uid://dhxw3f8l2saqn" path="res://assets/tilesets/tiles_world.tres" id="4_cnvg6"]
 [ext_resource type="PackedScene" uid="uid://bqmcg83s02mvu" path="res://player/player.tscn" id="5_p3adb"]
+[ext_resource type="PackedScene" uid="uid://cjm6c45pjsa3b" path="res://ui/hud.tscn" id="8_cnvg6"]
 
 [node name="LevelBase" type="Node" unique_id=800314931]
 script = ExtResource("1_ep22m")
@@ -48,3 +49,10 @@ format = 2
 [node name="Player" parent="." unique_id=1517647314 instance=ExtResource("5_p3adb")]
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=1830552437]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=672400650]
+
+[node name="HUD" parent="CanvasLayer" unique_id=82085438 instance=ExtResource("8_cnvg6")]
+
+[connection signal="score_changed" from="." to="CanvasLayer/HUD" method="update_score"]
+[connection signal="life_changed" from="Player" to="CanvasLayer/HUD" method="update_life"]

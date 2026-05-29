@@ -5,6 +5,9 @@ signal score_changed
 
 var item_scene = load("res://items/item.tscn")
 var score = 0: set = set_score
+func set_score(value):
+	score = value
+	score_changed.emit(value)
 
 
 func _ready() -> void:
@@ -29,9 +32,7 @@ func _on_item_picked_up():
 	score += 1
 
 
-func set_score(value):
-	score = value
-	score_changed.emit()
+
 
 
 func set_camera_limits():
