@@ -7,7 +7,6 @@
 [node name="LevelBase" unique_id=800314931 instance=ExtResource("1_mckh2")]
 
 [node name="ColorRect" parent="." index="0" unique_id=1760713141]
-visible = false
 offset_left = -232.99997
 offset_right = -178.6802
 
