@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cjm6c45pjsa3b" path="res://ui/hud.tscn" id="8_cnvg6"]
 [ext_resource type="AudioStream" uid="uid://c8ymsckh2dhce" path="res://assets/audio/Grasslands Theme.ogg" id="9_p3adb"]
 [ext_resource type="AudioStream" uid="uid://bq1o6l5l8j6p3" path="res://assets/audio/pickup2.ogg" id="10_5f4n4"]
+[ext_resource type="PackedScene" uid="uid://bsmxyu6odiba5" path="res://enemies/Enemy.tscn" id="11_twsyw"]
 
 [sub_resource type="Animation" id="Animation_5f4n4"]
 length = 0.001
@@ -153,6 +154,8 @@ volume_db = -15.0
 [node name="fade" type="AnimationPlayer" parent="." unique_id=962844849]
 root_node = NodePath("../ColorRect")
 libraries/ = SubResource("AnimationLibrary_kuw7y")
+
+[node name="Enemy" parent="." unique_id=779647892 instance=ExtResource("11_twsyw")]
 
 [connection signal="score_changed" from="." to="CanvasLayer/HUD" method="update_score"]
 [connection signal="died" from="Player" to="." method="_on_player_died"]

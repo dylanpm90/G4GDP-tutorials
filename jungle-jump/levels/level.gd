@@ -2,7 +2,6 @@ extends Node
 
 signal score_changed
 
-
 var item_scene = load("res://items/item.tscn")
 var door_scene = load("res://items/door.tscn")
 var score = 0: set = set_score
@@ -35,12 +34,21 @@ func spawn_items():
 			var item = item_scene.instantiate()
 			add_child(item)
 			item.init(type, $Items.map_to_local(cell))
-			item.picked_up.connect(self._on_item_picked_up)
+			if type == "cherry":
+				item.picked_up.connect(self._on_cherry_picked_up)
+			elif type == "gem":
+				item.picked_up.connect(self._on_gem_picked_up)
 
 
-func _on_item_picked_up():
+func _on_cherry_picked_up():
+	$PickUpSound.pitch_scale = 1.0
 	$PickUpSound.play()
 	score += 1
+
+func _on_gem_picked_up():
+	$PickUpSound.pitch_scale = 2.0
+	$PickUpSound.play()
+	score += 5
 
 
 func set_camera_limits():

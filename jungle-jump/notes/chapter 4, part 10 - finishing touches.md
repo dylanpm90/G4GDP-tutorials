@@ -38,3 +38,90 @@
   * set particle gradient to fade to zero alpha
   * add scripts for emitting dust for jumping and landing
 
+
+
+**updated title**
+
+* updated title scene to fix bug where user could input to multiple times, going beyond level one and triggering the fade out animation multiple times
+
+
+
+**ladders**
+
+* player scene
+
+  * animation player
+
+    * climb animation
+
+      * length: 0.4
+      * loop: on
+      * frames: 0, 1, 0, 2
+  * player script
+
+    * set climb speed
+    * bool whether on ladder
+    * get\_input
+
+      * direction input
+      * change state if on ladder
+      * if climbing set speed and anim for each direction
+      * if not on ladder, state is IDLE
+    * update physics process
+
+      * if not climbing, the gravity is normal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

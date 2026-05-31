@@ -12,6 +12,11 @@ func restart():
 	get_tree().change_scene_to_file(title_screen)
 
 
+func first_level():
+	current_level = 1
+	get_tree().change_scene_to_file(game_scene)
+
+
 func next_level():
 	current_level += 1
 	if current_level <= num_levels:
