@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://l7u0e4l3syek"]
+
+[ext_resource type="Script" uid="uid://dj1rmr5hv7won" path="res://items/moving_platform.gd" id="1_8kykb"]
+[ext_resource type="TileSet" uid="uid://dhxw3f8l2saqn" path="res://assets/tilesets/tiles_world.tres" id="1_mvgrd"]
+
+[node name="MovingPlatform" type="Node2D" unique_id=844598660]
+script = ExtResource("1_8kykb")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=788595971]
+tile_set = ExtResource("1_mvgrd")
+collision_animatable = true
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 983040, 14, 1, 1114112, 14, 2, 1114112, 14, 3, 1245184, 14)

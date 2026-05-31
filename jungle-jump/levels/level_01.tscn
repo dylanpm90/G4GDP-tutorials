@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dwfudb5u3ijls" path="res://levels/level_base.tscn" id="1_mckh2"]
 [ext_resource type="PackedScene" uid="uid://bsmxyu6odiba5" path="res://enemies/Enemy.tscn" id="2_81a5f"]
+[ext_resource type="PackedScene" uid="uid://l7u0e4l3syek" path="res://items/MovingPlatform.tscn" id="3_81a5f"]
 
 [node name="LevelBase" unique_id=800314931 instance=ExtResource("1_mckh2")]
 
@@ -31,3 +32,13 @@ position = Vector2(958, 306)
 [node name="Ladders" parent="." index="13" unique_id=128058076]
 collision_layer = 8
 collision_mask = 2
+
+[node name="MovingPlatform" parent="." index="14" unique_id=844598660 instance=ExtResource("3_81a5f")]
+position = Vector2(872, 144)
+offset = Vector2(100, 0)
+duration = 7.0
+
+[node name="MovingPlatform2" parent="." index="15" unique_id=1329919765 instance=ExtResource("3_81a5f")]
+position = Vector2(256, 256)
+offset = Vector2(200, 0)
+duration = 5.0

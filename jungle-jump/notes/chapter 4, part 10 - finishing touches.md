@@ -73,6 +73,90 @@
 
 
 
+**level setup**
+
+* Level scene update
+
+  * Area2D
+
+    * Name: Ladders
+    * connect body\_entered and body\_exited 
+    * collision layer: items
+    * mask: player
+  * update level script
+
+    * \_ready
+
+      * create ladders function
+      * data from World tileset
+
+
+
+**moving platforms**
+
+* Node2d root node for new scene
+
+  * Name: MovingPlatform
+  * TileMap child
+
+    * add tiles\_world.tres as the tileset
+    * collision animatable checked
+  * new script
+
+    * set an offset
+    * set a duration
+    * \_ready
+
+      * use a tween for movement
+
+        * experiment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
