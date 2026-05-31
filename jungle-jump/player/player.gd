@@ -105,9 +105,24 @@ func get_input():
 		if up:
 			velocity.y = -climb_speed
 			$AnimationPlayer.play("climb")
+			if jump:
+				change_state(JUMP)
+				velocity.y = jump_speed
+				$Dust.emitting = true
+				$JumpSound.play()
 		elif down:
 			velocity.y = climb_speed
 			$AnimationPlayer.play("climb")
+			if jump:
+				change_state(JUMP)
+				velocity.y = jump_speed
+				$Dust.emitting = true
+				$JumpSound.play()
+		elif jump:
+			change_state(JUMP)
+			velocity.y = jump_speed
+			$Dust.emitting = true
+			$JumpSound.play()
 		else:
 			velocity.y = 0
 			$AnimationPlayer.stop()
