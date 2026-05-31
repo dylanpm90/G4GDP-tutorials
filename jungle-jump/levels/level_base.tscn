@@ -144,6 +144,7 @@ format = 2
 stream = ExtResource("9_p3adb")
 volume_db = -10.0
 autoplay = true
+parameters/looping = true
 
 [node name="PickUpSound" type="AudioStreamPlayer2D" parent="." unique_id=1654662840]
 stream = ExtResource("10_5f4n4")

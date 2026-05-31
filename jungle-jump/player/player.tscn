@@ -121,10 +121,19 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
 size = Vector2(10, 20)
 
+[sub_resource type="Gradient" id="Gradient_yw30f"]
+offsets = PackedFloat32Array(0, 0.15724382)
+colors = PackedColorArray(0.9700398, 0.94346386, 0.9090398, 1, 0.8235294, 0.7058824, 0.54901963, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qjkh3"]
+gradient = SubResource("Gradient_yw30f")
+width = 1
+
 [node name="Player" type="CharacterBody2D" unique_id=1517647314]
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_rkbax")
+double_jump_factor = 1.25
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1000219093]
@@ -156,3 +165,19 @@ pitch_scale = 5.0
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=1322568667]
 stream = ExtResource("3_g1dw6")
 volume_db = -15.0
+
+[node name="Dust" type="CPUParticles2D" parent="." unique_id=1329648100]
+position = Vector2(-2, 0)
+rotation = -1.5707964
+emitting = false
+amount = 20
+texture = SubResource("GradientTexture1D_qjkh3")
+lifetime = 0.7
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.7
+emission_shape = 3
+emission_rect_extents = Vector2(1, 6)
+gravity = Vector2(0, 0)
+initial_velocity_max = 10.0
+scale_amount_max = 3.0
