@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cefg0n60eb550"]
+
+[ext_resource type="MeshLibrary" uid="uid://g7rie4nh5rkf" path="res://assets/golf_tiles.tres" id="1_ln22a"]
+
+[node name="Hole" type="Node3D" unique_id=1452749641]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1751588525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62471676, 0.40604496, -0.18499017)
+mesh_library = ExtResource("1_ln22a")
+cell_size = Vector3(1, 1, 1)
