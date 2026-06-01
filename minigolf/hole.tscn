@@ -2,9 +2,20 @@
 
 [ext_resource type="MeshLibrary" uid="uid://g7rie4nh5rkf" path="res://assets/golf_tiles.tres" id="1_ln22a"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ln22a"]
+rough = true
+bounce = 0.5
+
 [node name="Hole" type="Node3D" unique_id=1452749641]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1751588525]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62471676, 0.40604496, -0.18499017)
 mesh_library = ExtResource("1_ln22a")
+physics_material = SubResource("PhysicsMaterial_ln22a")
 cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(65535, 3, 23, 65535, 2, 25, 65535, 1, 25, 65535, 0, 25, 1, 65535, 1048589, 65535, 65535, 7, 0, 65535, 1441823)
+}
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=425971836]
+transform = Transform3D(0.5593521, -0.1803878, 0.8090646, 3.1228605e-08, 0.97603464, 0.21761517, -0.8289302, -0.121723466, 0.545947, 3.3682637, 2.817715, 3.0549865)

@@ -21,4 +21,8 @@
   * GridMap node
 
     * add golf\_tiles.tres
+  * physics settings
+
+    * rough: on
+    * bounce: 0.5
 
