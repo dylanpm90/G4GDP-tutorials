@@ -2,11 +2,32 @@
 
 [ext_resource type="MeshLibrary" uid="uid://g7rie4nh5rkf" path="res://assets/golf_tiles.tres" id="1_ln22a"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ln22a"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_1s0jb"]
+sky_material = SubResource("ProceduralSkyMaterial_ln22a")
+
+[sub_resource type="Environment" id="Environment_cki6r"]
+background_mode = 2
+sky = SubResource("Sky_1s0jb")
+tonemap_mode = 2
+glow_enabled = true
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ln22a"]
 rough = true
 bounce = 0.5
 
 [node name="Hole" type="Node3D" unique_id=1452749641]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=796781994]
+environment = SubResource("Environment_cki6r")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1576245754]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 40.0
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1751588525]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62471676, 0.40604496, -0.18499017)
@@ -18,4 +39,4 @@ data = {
 }
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=425971836]
-transform = Transform3D(0.5593521, -0.1803878, 0.8090646, 3.1228605e-08, 0.97603464, 0.21761517, -0.8289302, -0.121723466, 0.545947, 3.3682637, 2.817715, 3.0549865)
+transform = Transform3D(0.5593521, -0.18038781, 0.8090646, 3.1228605e-08, 0.9760347, 0.21761519, -0.8289302, -0.12172348, 0.545947, 3.2868872, 2.817715, 3.0549865)

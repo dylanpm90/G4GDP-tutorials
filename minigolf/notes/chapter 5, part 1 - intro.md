@@ -25,4 +25,14 @@
 
     * rough: on
     * bounce: 0.5
+  * Camera3d
+
+
+
+**environment and lighting**
+
+* add a WorldEnvironment node and a DirectionalLight3D node
+* DirectionalLight3d
+
+  * Max Distance: 40
 
