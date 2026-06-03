@@ -19,6 +19,10 @@ glow_enabled = true
 rough = true
 bounce = 0.5
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ln22a"]
+height = 0.25
+radius = 0.08
+
 [node name="Hole" type="Node3D" unique_id=1452749641]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=796781994]
@@ -40,3 +44,13 @@ data = {
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=425971836]
 transform = Transform3D(0.5593521, -0.18038781, 0.8090646, 3.1228605e-08, 0.9760347, 0.21761519, -0.8289302, -0.12172348, 0.545947, 3.2868872, 2.817715, 3.0549865)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1038444827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0465479, 0.87076795, -0.68742394)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=648305380]
+shape = SubResource("CylinderShape3D_ln22a")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=152122699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1630082, 1.0100539, 3.546194)

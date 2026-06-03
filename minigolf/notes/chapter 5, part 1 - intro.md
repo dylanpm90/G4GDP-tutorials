@@ -36,3 +36,41 @@
 
   * Max Distance: 40
 
+
+
+**adding the hole**
+
+* Area3D
+
+  * name: Hole
+  * CollisionShape3D
+
+    * Shape: New CylinderShape3D
+    * Height: 0.25
+    * Radius**:** 0.08
+  * Position the Hole at the courses hole position
+* Marker3D
+
+  * Name: Tee
+  * Position where you want the ball to be placed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
